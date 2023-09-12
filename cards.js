@@ -30,11 +30,11 @@ async function drawCard() {
 async function handleCardClick(evt) {
   evt.preventDefault();
 
-  const $card = await drawCard();
-  const $newCard = $(`<img src="${$card.image}">`);
+  const card = await drawCard();
+  const $newCard = $(`<img src="${card.image}">`);
   $cardContainer.prepend($newCard);
 
-  if ($card.remaining === 0) {
+  if (card.remaining === 0) {
     $cardForm.hide();
   }
 }
